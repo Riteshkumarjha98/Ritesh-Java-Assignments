@@ -54,3 +54,48 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.eclipse.ui 2 2 2022-05-28 00:32:16.123
 !MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:00.497
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:00.536
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@41cac0a7[org.springframework.tooling.boot.ls:1.33.0.202204250653(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:00.588
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:02.003
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:14.941
+!MESSAGE Boot LS startup time from start to initialized: 14271ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.269
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DGTrhtlFisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.302
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.358
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.375
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.388
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.406
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.DGTrhtlF => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.431
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.450
+!MESSAGE buffering callback sts4.classpath.DGTrhtlF Day-7 false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:15.478
+!MESSAGE executing callback sts4.classpath.DGTrhtlF 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-28 00:38:16.524
+!MESSAGE executing callback sts4.classpath.DGTrhtlF SUCCESS [done]
