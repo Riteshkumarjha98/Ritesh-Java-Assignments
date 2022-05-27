@@ -1,0 +1,104 @@
+package com.p2;
+
+public class Member{
+	 String Name;
+	 int Age;
+	 String PhoneNumber;
+	 String Address;
+	 double Salary;
+		
+	 void printSalary() {
+			System.out.println(Salary);
+		}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public int getAge() {
+		return Age;
+	}
+
+	public void setAge(int age) {
+		Age = age;
+	}
+
+	public String getPhoneNumber() {
+		return PhoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		PhoneNumber = phoneNumber;
+	}
+
+	public String getAddress() {
+		return Address;
+	}
+
+	public void setAddress(String address) {
+		Address = address;
+	}
+
+	public double getSalary() {
+		return Salary;
+	}
+
+	public void setSalary(double salary) {
+		Salary = salary;
+		
+		
+		
+	}
+	public class Main{
+		
+	public static void main (String[] args) {
+		Employee Emp1 = new Employee();
+		Manager Mng1 = new Manager();
+		Emp1.setName("Ritesh");
+		Emp1.setAddress("Bihar");
+		Emp1.setAge(22);
+		Emp1.setPhoneNumber("7079880884");
+		Emp1.setSalary(5000000);
+		Mng1.setName("Subham");
+		Mng1.setAddress("Bengaluru");
+		Mng1.setAge(18);
+		Mng1.setPhoneNumber("6969858585");
+		Mng1.setSalary(1000000);
+		
+		System.out.println("Details of Employee is here :-");
+		System.out.println("Name : " + Emp1.getName());
+		System.out.println("Age : " + Emp1.getAge());
+		System.out.println("Mobile : " + Emp1.getPhoneNumber());
+		System.out.println("Address : " + Emp1.getAddress());
+		System.out.println("Salary : " + Emp1.getSalary());
+		System.out.println("Name : " + Emp1.getName());
+		System.out.println("----------------------------------");
+		System.out.println("Details of the managaer is here :-");
+		System.out.println("Name : " + Mng1.getName());
+		System.out.println("Age : " + Mng1.getAge());
+		System.out.println("Mobile : " + Mng1.getPhoneNumber());
+		System.out.println("Address : " + Mng1.getAddress());
+		System.out.println("Salary : " + Mng1.getSalary());
+		System.out.println("Name : " + Mng1.getName());
+	}
+	}
+
+	}
+
+	class Employee extends Member{
+		String Specification;
+		String Department;
+		
+	}
+
+	class Manager extends Member{
+		String Specification;
+		String Department;;
+		
+	}
+
+
