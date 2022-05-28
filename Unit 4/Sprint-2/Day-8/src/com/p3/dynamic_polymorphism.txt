@@ -1,0 +1,59 @@
+
+     3. Explain dynamic polymorphism ?
+     
+     Ans:- The word polymorphism is a combination of two words i.e. ploy and morphs.
+        The word poly means many and morphs means different forms. 
+        In short, a mechanism by which we can perform a single action in different ways.
+    
+      
+      Dynamic polymorphism is a process or mechanism in which a call to an overridden method is to resolve at runtime rather than compile-time.
+       It is also known as runtime polymorphism or dynamic method dispatch. We can achieve dynamic polymorphism by using the method overriding.
+
+In this process, an overridden method is called through a reference variable of a superclass. The determination of the method to be called is based on the object being referred to by the reference variable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

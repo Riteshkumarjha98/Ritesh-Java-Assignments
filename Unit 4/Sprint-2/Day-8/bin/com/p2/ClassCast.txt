@@ -1,0 +1,64 @@
+    
+    
+   
+    Question: Explain ClassCastException with the help of the example.
+
+   Ans:-  A   class cast exception is thrown by Java when you try to cast an Object of one data type to another.
+
+          Java allows us to cast variables of one type to another as long as the casting happens between compatible data types.
+  
+          For example you can cast a String as an Object and similarly an Object that contains String values can be cast to a String.
+    
+    
+    
+      class ParentTest {
+      String parentName;
+      ParentTest(String n1){
+          parentName = n1;
+   }
+   public void display() {
+      System.out.println(parentName);
+         }
+     }
+      class ChildTest extends ParentTest {
+           String childName;
+          ChildTest(String n2) {
+           super(n2);
+          childName = n2;
+      }
+         public void display() {
+          System.out.println(childName);
+        }
+      }
+     public class Test {
+      public static void main(String args[]) {
+       ChildTest ct1 = new ChildTest("Jai");
+      ParentTest pt1 = new ParentTest("Adithya");
+      pt1 = ct1;
+      pt1.display();
+
+      ParentTest pt2 = new ParentTest("Sai");
+      ChildTest ct2 = (ChildTest)pt2;
+       }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
