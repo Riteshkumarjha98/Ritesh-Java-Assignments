@@ -1,2 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.p4.Tiger"/>
+    <fullyQualifiedTypeName name="com.p4.Animal"/>
+    <fullyQualifiedTypeName name="com.p4.Dog"/>
+    <fullyQualifiedTypeName name="com.p4.Cat"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

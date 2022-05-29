@@ -106,11 +106,28 @@ public class Student {
 
 
 
-	
+	public int getRoll() {
+		return roll;
+	}
 
 
-	
-	
+
+	public String getName() {
+		return name;
+	}
+
+
+
+	public int getMarks() {
+		return marks;
+	}
+
+
+
+	public char getGrade() {
+		return grade;
+	}
+
 }
 
 
