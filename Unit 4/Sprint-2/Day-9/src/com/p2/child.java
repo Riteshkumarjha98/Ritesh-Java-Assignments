@@ -13,7 +13,7 @@ public final class child extends Parent {
 	
 	
 	public void method4() {
-		System.out.println("I'm inside method 4 of child");
+		System.out.println("I'm method 4");
 	}
 	
 	public child(int i) {
