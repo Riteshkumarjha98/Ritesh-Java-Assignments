@@ -33,11 +33,18 @@ public class Demo{
     	   System.out.println("Please enter Valid Amount");
        }
        else {
-    	  Hotel hotel =  d1.provideFood(enteredUserAmount);
-    	    System.out.println("------------------------------");
+       Hotel hotel = new Demo().provideFood(enteredUserAmount);
+		if(hotel instanceof TajHotel) {
+			TajHotel tajHotel = (TajHotel)hotel;
+			tajHotel.welcomeDrink();
+		}
+       
+//       else {
+//    	  Hotel hotel1 =  d1.provideFood(enteredUserAmount);
+//    	    System.out.println("------------------------------");
          hotel.chickenBiryani();
-         System.out.println("-----------------------------");
          hotel.masalaDosa();  
+         
         
        }
        

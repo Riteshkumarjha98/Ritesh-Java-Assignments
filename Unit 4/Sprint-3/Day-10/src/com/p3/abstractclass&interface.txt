@@ -1,0 +1,11 @@
+An interface in Java is defined as an abstract type that specifies class behavior. An interface is a kind of a 
+protocol that sets up rules regarding how a particular class should behave. An interface in Java can contain 
+abstract methods and static constants. By default, all the methods in the interface are public and abstract.
+
+A simple example of an interface in Java is given below.
+
+interface shape{
+	public static final String color = “Red”;
+	public void calculateArea();
+}
+The above example defines an interface ‘shape’ which has a static variable and an abstract method ‘calculateArea ()’.
