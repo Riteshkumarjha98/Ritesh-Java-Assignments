@@ -1,11 +1,40 @@
-An interface in Java is defined as an abstract type that specifies class behavior. An interface is a kind of a 
-protocol that sets up rules regarding how a particular class should behave. An interface in Java can contain 
-abstract methods and static constants. By default, all the methods in the interface are public and abstract.
+  Q3) Explain abstract class and interface with an example.
 
-A simple example of an interface in Java is given below.
+        A class which is declared with the abstract keyword is known as an abstract class in Java. 
+        It can have abstract and non-abstract methods (method with the body).
+         Abstraction is a process of hiding the implementation details and showing only functionality to the user.
+         
+         
+         
+        There are two ways to achieve abstraction in java
 
-interface shape{
+          #Abstract class (0 to 100%)
+          #Interface (100%)
+
+
+
+     Example of Abstract class that has an abstract method:----
+     
+     abstract class Bike{  
+      abstract void run();  
+     }  
+      class Honda4 extends Bike{  
+      void run(){System.out.println("running safely");}  
+      public static void main(String args[]){  
+      Bike obj = new Honda4();  
+       obj.run();  
+       }  
+          }  
+    
+    
+     An interface in Java is defined as an abstract type that specifies class behavior. An interface is a kind of a 
+     protocol that sets up rules regarding how a particular class should behave. An interface in Java can contain 
+     abstract methods and static constants. By default, all the methods in the interface are public and abstract.
+
+    A simple example of an interface in Java is given below.
+
+    interface shape{
 	public static final String color = “Red”;
 	public void calculateArea();
-}
-The above example defines an interface ‘shape’ which has a static variable and an abstract method ‘calculateArea ()’.
+    }
+    The above example defines an interface ‘shape’ which has a static variable and an abstract method ‘calculateArea ()’.
