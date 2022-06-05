@@ -3,13 +3,15 @@ package com.p1;
 public class Demo {
 
 	public static void main(String[] args) {
-		ZImpl Zimpl = new ZImpl();
-		Zimpl.abstractMethodX();
-		Zimpl.abstractMethodY();
-		Zimpl.defaultMethodX();
-		Zimpl.defaultMethodY();
 		
-		X.staticMethodX();
-		Y.staticMethodY();
+	  ZImpl zimpl = new ZImpl();
+	  zimpl.dance();
+	  zimpl.driving();
+	  zimpl.flying();
+//	  zimpl.sing();
+	  zimpl.walking();
+	System.out.println("************"); 
+     X.running();
+     Y.rideing();
 	}
 }

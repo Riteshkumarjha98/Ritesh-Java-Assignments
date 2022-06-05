@@ -1,15 +1,15 @@
 package com.p1;
 
+
 public interface Y {
+  
+void dance();
 	
-         void abstractMethodY();
-	
-	
-	default void defaultMethodY() {
-		System.out.println("I'm Default Method of Y");
-	}
-	
-	static void staticMethodY() {
-		System.out.println("I'm static Method of Y");
-	}
+    default void singing() {
+    	System.out.println("I am Singing  in Yintr");
+    }
+    
+    public static void rideing() {
+    	System.out.println("I am rideing in Yintr");
+    }
 }

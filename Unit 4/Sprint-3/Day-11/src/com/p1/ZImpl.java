@@ -2,32 +2,57 @@ package com.p1;
 
 public class ZImpl implements Z {
 
-	
-
-
 	@Override
-	
-	// default method x should be overridden
-	public void defaultMethodX() {
-		System.out.println("I am inside default methodx in ZImpl ");
-	}
-
-	@Override
-	public void abstractMethodX() {
+	public void walking() {
 		// TODO Auto-generated method stub
+		System.out.println("I am walking in Zimpl");
 		
 	}
 
 	@Override
-	public void abstractMethodY() {
-		// TODO Auto-generated method stub
-		
+	public void dance() {
+	
+		System.out.println("I am dance in Zimpl");
 	}
 
 	@Override
-	public void MethodZ() {
-		// TODO Auto-generated method stub
-		
+	public void driving() {
+	
+		System.out.println("I am driving in Zimpl");
+
+	}
+	@Override
+	public void flying() {
+	    	System.out.println("I am flying  in Zimpl");
+	    }
 	}
 	
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+

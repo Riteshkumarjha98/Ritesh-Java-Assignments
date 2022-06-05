@@ -1,20 +1,15 @@
 package com.p1;
 
+
 public interface X {
-
-	void abstractMethodX();
+  
+	void walking();
 	
-	
-	default void defaultMethodX() {
-		System.out.println("I'm inside Default Method X");
-	}
-	
-	
-	public static void staticMethodX() {
-	System.out.println("I'm static Method of X");
-		
-	}
-
-
-	void MethodZ();
-}
+    default void flying() {
+    	System.out.println("I am flying  in Xintr");
+    }
+    
+    public static void running() {
+    	System.out.println("I am running in Xintr");
+    }
+}  
