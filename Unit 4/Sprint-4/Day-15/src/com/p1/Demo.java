@@ -7,8 +7,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Demo{
-	
-	static LocalDate validateDate(String dob) throws InvalidDateFormat {
+
+        static LocalDate validateDate(String dob) throws InvalidDateFormat {
 		try {
 			
 			DateTimeFormatter DTF= DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -23,7 +23,7 @@ public class Demo{
 	public static void main(String[] args)  {
 		 Scanner input = new Scanner(System.in);
 		 
-		 System.out.println("Enter the date of birth in the format  :  dd/MM/yyyy   ");
+		 System.out.println("Enter The Date Of Birth In The Format  :  dd/MM/yyyy");
 		 String dob = input.next();
 		 try {
 			 
