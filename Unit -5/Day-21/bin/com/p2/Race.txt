@@ -1,0 +1,15 @@
+
+
+
+ Race condition in Java is a type of concurrency bug or
+ issue that is introduced in our program because of 
+ parallel execution of our program by multiple threads
+ at the same time.
+ 
+  In layman terms, a race condition can be defined as,
+  a condition in which two or more threads compete together
+  to get certain shared resources.
+  For example, if thread A is reading data from the linked
+  list and another thread B is trying to delete the same data.
+  This process leads to a race condition that may result in
+  run time error.

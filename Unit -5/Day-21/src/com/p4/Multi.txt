@@ -1,0 +1,18 @@
+
+4)Explain wait(), notify(),notifyAll() how they are used for inter thread communication.
+
+ Ans:  we can call wait(), notify(),notifyAll() only in the synchronized block or synchronized 
+       methods.otherwise we will get a runtime exception.
+
+ To call wait() or notify() method on any object we must have that particular object lock otherwise
+ we will get a runtime exception called IllegalMonitorStateException.
+
+
+  wait() method is primarily used for the inter-thread communication.
+  As wait() method is used to pause the current thread so its counter method is also provided in object 
+  class to resume the thread which is notify() and notifyAll().
+   
+  The wait() method causes the current thread to wait until another thread invokes the notify() or notifyAll() methods for that object. The notify() method
+   wakes up a single thread that is waiting on that object’s monitor. The notifyAll() method wakes up all threads that are waiting on that object’s monitor. 
+   A thread waits on an object’s monitor by calling one of the wait() method. These methods can throw IllegalMonitorStateException if the current thread is
+    not the owner of the object’s monitor.

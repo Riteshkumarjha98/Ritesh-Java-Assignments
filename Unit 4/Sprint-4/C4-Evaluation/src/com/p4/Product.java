@@ -9,10 +9,7 @@ public class Product {
 	int count;
    
 	
-
-
-
-	public Product(String name, double price, String company) {
+   public Product(String name, double price, String company) {
 		super();
 		this.name = name;
 		this.price = price;
@@ -69,21 +66,29 @@ public class Product {
 		if (getClass() != obj.getClass())
 			return false;
 		Product other = (Product) obj;
+		
 		return Objects.equals(company, other.company) && count == other.count && Objects.equals(name, other.name)
 				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price);
 	}
+//
+//	public void add(Product product) {
+//		// TODO Auto-generated method stub
+//	         
+//	
+//	}
 
-	public void add(Product product) {
-		// TODO Auto-generated method stub
-	         
-	
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", price=" + price + ", company=" + company + ", count=" + count + "]";
 	}
 
-//	public void add(Product product) {
-//		this.product=product;
-//		
-//	}
-	 
+	public void add(Product product) {
+		 
+		
+	}
+
+	
+
 	
 
 }

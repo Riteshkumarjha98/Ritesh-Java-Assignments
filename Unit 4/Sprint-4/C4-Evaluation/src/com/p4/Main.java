@@ -18,7 +18,8 @@ public class Main {
 		 
 		 System.out.println(ecommerce.showAllProduct());
 		 
-	
+	 
+
 		for (Product S : ecommerce.productList) {
 			 m1.add(S);
 		 }
@@ -27,8 +28,10 @@ public class Main {
 			
 			System.out.println("Product added successfully");
 		}
-		 }
+	 }
+}
+		 
 		 
 		
-	 }
+	 
 
