@@ -1,0 +1,33 @@
+2.Explain difference between JPA and Hibernate:
+● Explain Layered Architecture:
+
+Answer :- 
+
+A : JPA
+a. It is defined in javax.persistence package.
+
+b. Java Persistence API (JPA) defines the management of relational data in the Java applications.
+
+c. It uses Java Persistence Query Language (JPQL) as an object-oriented 
+query language to perform database operations.
+
+B : Hibernate
+
+a. Hibernate is an Object-Relational Mapping (ORM) tool which is used to save the state of Java object into
+ the database.
+ 
+b. It is defined in org.hibernate package.
+
+c. It uses Hibernate Query Language (HQL) as an object-oriented query language to
+ perform database operations.
+
+ 
+ 
+ Explain Layered Architecture:
+ 
+ Anser :-The layered architecture style is one of the most common architectural styles. 
+  The idea behind Layered Architecture is that modules or components with similar
+  functionalities are organized into horizontal layers. 
+  One of the benefit is our code will be easier to understand.
+ 
+ 

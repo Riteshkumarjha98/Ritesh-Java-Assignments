@@ -1,0 +1,10 @@
+1.What are the advantages of using Hibernate over JDBC?
+
+Answer :
+Hibernate is a database-independent language we can use over any platform.
+Hibernate reduces the boilerplate code like creating the connection and loading the driver
+ class etc. Hibernate provides a large number of API can be directly used to develop
+  java application faster and easier.
+
+In JDBC there is no check that always every user has updated data. Hibernate enables definition of version type field to application, due to which Hibernate updates version field of database table every time relational tuple is 
+updated in form of Java class object to that table.

@@ -2,14 +2,14 @@ package com.assignment.UseCases;
 
 import java.util.Scanner;
 
-import com.assignment.dao.EmployeeDao;
-import com.assignment.dao.EmployeeImpl;
-import com.assignment.entities.Employee;
+import com.assignment.dao.AccountDao;
+import com.assignment.dao.AccountImpl;
+import com.assignment.entities.Account;
 
 public class GetAddressEmployee {
 
 	public static void main(String[] args) {
-		EmployeeDao dao = new EmployeeImpl();
+		AccountDao dao = new AccountImpl();
 		
 		Scanner sc  = new Scanner (System.in);
 		
