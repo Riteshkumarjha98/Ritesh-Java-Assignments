@@ -22,7 +22,6 @@ public class Employee {
 	private int salary;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	
 	private Department dept;
 
 	

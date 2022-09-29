@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+  <bean  id="sum" class ="com.assignment.Sum"/>
+  <bean  id="substract" class ="com.assignment.Substraction"/>
+  <bean  id="prod" class ="com.assignment.Multiplication"/>
+  <bean  id="divide" class ="com.assignment.Divide"/>
+     
+  
+  <bean id = "serviceLayer" class = "com.assignment.ServiceLayer">
+       
+     <property name="a" value ="70"/>
+     <property name="b" value ="30"/>
+     <property name="operation" ref ="sum"/>     
+     </bean>
+
+	<bean id="init" class="com.assignment.Init_Setup" init-method="mySetup">
+    <property name="message" value="Welcome to Spring_assignment.."/>
+    </bean>
+        
+     <bean id="destroy" class="com.assignment.Destroy" destroy-method="destroy" />
+        
+      
+        
+</beans>
