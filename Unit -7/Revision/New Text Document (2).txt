@@ -1,0 +1,22 @@
+ As you know my name is Ritesh Jha, and here I'm going to present one of my projects.
+ So, first I would like to tell you about the project, so, it's a clone of an Ecommerce Website
+ Overstock.com. And it's a collaborative project created by me and my 5 other teammates.
+ We have used HTML, CSS, and Javascript. And deploy it on the Netlify link which I showing you here.
+
+Now,let's come on this wesite. So, this is my landing page where and in footer part we have given search option, 
+navbar ,login and signup , cart where people can choose items accordint to different catergories, this feature for make our website user friendly,
+if you need any items of furniture then you simply needs to click on furniture option
+ 
+When we come downside then here is lots of glimses of images which gives you about idea 
+what the items present in our site.
+
+
+And in footer part you have mentions contact, details and many more thins, and these a
+are hard coded , and we didn't give any functionality due to lack of time,
+
+Now come on product page and product detail pages which is created by me, 
+ So, on product page you see different items, and when you click on any of this items 
+then new pages appear with product detail. In this pages we miss the filter part 
+becuase one of our teams mates didn't join us during projects and we have to complete
+this in four days. I will complete this part. But we have given fileter part with price
+rating here. Where you can filter product in three way.  

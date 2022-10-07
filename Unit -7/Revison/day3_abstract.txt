@@ -1,0 +1,561 @@
+Problem 1 :
+==============================================================================================
+
+Part 1 Answer :
+----------------------------------------------------------
+
+
+package com.masai;
+
+abstract class AbstractAlgorithm{
+	abstract void steps();
+}
+
+class Algorithm1 extends AbstractAlgorithm{
+
+	@Override
+	void steps() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside steps of Algorithm1 ");
+	}
+}
+
+public class Main{
+	public static void main(String[] args) {
+		
+		
+		AbstractAlgorithm a = new Algorithm1();
+		a.steps();                                                       // Here it is easily got called so we won't face any compliation error in this case.
+		
+		
+	}
+}
+
+
+
+Part 2 Answer :
+-----------------------------------------------------------------
+
+
+package com.masai;
+
+abstract class AbstractAlgorithm{
+	abstract void steps();
+}
+
+abstract class Algorithm1 extends AbstractAlgorithm{
+
+	@Override
+	void steps() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside steps of Algorithm1 ");
+	}
+}
+
+public class Main{
+	public static void main(String[] args) {
+		
+		
+		Algorithm1 a = new Algorithm1();   // Here we will get compilation error since we are trying to extend abstract class with sub abstract class
+                                                                                              // we cannot instantiate
+	
+		
+		
+	}
+}
+
+
+Part 3 Answer :
+----------------------------------------------------------------
+abstract class AbstractAlgorithm{
+	private int stepCount;            // it will work 
+}
+
+
+part 4 Answer :
+-------------------------------------------------------------------
+public class Main{
+	public static void main(String[] args) {
+		AbstractAlgorithm a = new AbstractAlgorithm() {  // we need to provide body here in order to run the application.
+				
+		};
+		System.out.println(a.getStepCount());
+	}
+}
+
+abstract class AbstractAlgorithm{
+	private int stepCount;
+	
+	public int getStepCount(){
+		return stepCount;
+	}
+}
+
+
+
+Problem 2 :
+=============================================================================================
+
+Part 1 :
+---------------------------
+
+package com.masai;
+
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2();
+}
+
+public class Main{
+	public static void main(String[] args) {
+		Interface1 i = new Interface1() {      // for creating instance we need to provide body then we only get reference variable to call the 					   // method
+			
+			@Override
+			public void method1() {
+				// TODO Auto-generated method stub
+				System.out.println("Inside method1 of instance Intefac1");
+			}
+		};
+		
+		i.method1();
+	}
+}
+
+
+Part 2 :
+-----------------------------------------------------------------
+
+package com.masai;
+
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2();
+}
+
+interface Implementation implements Interface2{  // here we are implementing interface instead of extending so we ll get error.
+	void method2();
+}
+
+
+
+
+
+Part 3
+--------------------------------------------
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2()
+}
+
+interface Implementation implements Interface2{  //again here we are implementing interface instead of extending so we ll get error.
+	void method1();
+	void method2();
+}
+
+
+
+Part 4 
+-----------------------------------
+
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2();
+}
+
+
+
+abstract class ImplementationAbstract implements Interface2{   // here we can implement since any class can implement interface.
+	public void method1() { }
+}
+
+
+
+
+Part 5
+--------------------------------------------------------------------------
+
+interface Interface3 {
+	int test;                  // It won't work it need to be initiated..
+}
+
+
+Part 6
+----------------------------------------------------------------------------------
+
+interface Interface3 {      
+	int test = 5;  // it will work because by default jvm will put  public static final int test = 5;
+}
+
+
+Part 7
+---------------------------------------------------------
+
+interface Interface4{
+	default  void print(){                                           // Since Java 8 we can use  default methods inside interface
+		System.out.println("default");
+	}
+}
+
+
+
+
+Part 8
+--------------------------------------------------------
+
+public class Main{
+	public static void main(String[] args) {
+		Test test  = new Test();     
+		test.print();                          // it will work perfectly and print parent method print() because child has no any own method so it will go for                                                                              // parent.
+	}
+}
+
+
+interface Interface4{
+	
+	default void print(){
+		System.out.println("default");
+	}
+}
+
+class Test implements Interface4{
+
+	
+}
+
+
+
+Part 9
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+public class Main{
+	public static void main(String[] args) {
+		Test1 test  = new Test1();
+		test.print();                                  // It will print child method as a output we will get "Override" , because child have own implemented method                                                                                       // so first priority will be child method than parent
+	}
+}
+
+
+interface Interface4{
+	
+	default void print(){
+		System.out.println("default");
+	}
+}
+
+class Test1 implements Interface4{
+   
+	public void print(){
+		System.out.println("override");
+	}
+	
+}
+
+
+
+
+Problem 3 :
+================================================
+
+
+Create an abstract class “Publication” with data members ‘noOfPages’, ‘price’, ‘publisherName’ etc. with their accessor/modifier functions. Now create two sub-classes “Book” and “Journal”. Create a class Library that contains a list of Publications. Write a main() function and create three Books and two Journals, add them to library and print the details of all publications.
+
+
+Solution :
+
+
+
+package com.masai;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+abstract class Publication{
+	
+	public int noOfPages;
+	public double price;
+	public String publisherName;
+	public String bookName;
+	
+	
+	public int getNoOfPages() {
+		return noOfPages;
+	}
+	public void setNoOfPages(int noOfPages) {
+		this.noOfPages = noOfPages;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getPublisherName() {
+		return publisherName;
+	}
+	public void setPublisherName(String publisherName) {
+		this.publisherName = publisherName;
+	}
+	public String getBookName() {
+		return bookName;
+	}
+	public void setBookName(String bookName) {
+		this.bookName = bookName;
+	}
+	
+	
+	
+	
+	
+	
+	
+}
+
+class Book extends Publication{
+
+	public Book(int noOfPages, double price, String publisherName,String bookName) {
+		super();
+		this.noOfPages = noOfPages;
+		this.price = price;
+		this.publisherName = publisherName;
+		this.bookName = bookName;
+	}
+	
+	
+	
+	
+	
+}
+
+class Journal extends Publication{
+	public String genre;
+
+	public Journal(String genre) {
+		super();
+		this.genre = genre;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	
+}
+
+class Library{
+	List<Publication> list = new ArrayList<Publication>();
+}
+
+class Main{
+	public static void main(String[] args) {
+		Book b1 = new Book(500, 330, "Chetan Bhagat","Half Girf Friend");
+		Book b2 = new Book(400, 390, "Dale Carnegie","How to win Friends and Influence People");
+		Book b3 = new Book(300, 240, "James Clear", "Atomic Habit");
+		
+		Journal j1 = new Journal("Love Story");
+		Journal j2 = new Journal("Productivity");
+		
+		Library library = new Library();
+		 library.list.add(b1);
+		 library.list.add(b2);
+		 library.list.add(b3);
+		 
+		 
+		 library.list.add(j1);
+		 library.list.add(j2);
+		 
+//		 System.out.println(library.list.get(0).getBookName());
+		 
+		for(Publication x:library.list) {
+			
+			
+			if(x.getBookName() != null) {
+				System.out.println("Publisher Name : " +x.getPublisherName());
+				System.out.println("Book Name : " +x.getBookName());
+				System.out.println("Total Pages :" +x.getNoOfPages());
+				System.out.println("Price : " +x.getPrice());
+				
+				System.out.println("******************************************");
+			}
+			
+			
+		}
+		
+	}
+}
+
+
+
+Problem 4 :
+==========================================================================================
+
+
+
+Solution :
+
+package com.masai;
+
+import java.util.Arrays;
+
+abstract class SortingAlgorithm{
+	abstract void sort(int[] arr , int n);
+}
+
+class SelectionSort extends SortingAlgorithm{
+
+	@Override
+	void sort(int[] arr , int n) {
+		for(int i = 0; i<arr.length; i++) {
+			int min = i;
+			
+			for(int j = i + 1; j<n; j++) {
+				if(arr[j] < arr[min])
+					min = j;
+			}
+			swap(arr,min,i);
+		}
+	}
+	
+	public static void swap(int[] arr , int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	
+	
+}
+
+class InsertionSort extends SortingAlgorithm{
+
+	@Override
+	void sort(int[] arr , int n) {
+        for (int i = 1; i < n; ++i) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+		
+	}
+	
+}
+
+class BubbleSort extends SortingAlgorithm{
+
+	@Override
+	void sort(int[] arr , int n) {
+	
+		for(int i = 0; i<n; i++) {
+			for(int j = 0; j<n-i-1; j++) {
+				if(arr[j] > arr[j + 1]) {
+					swap(arr,j,j+1);
+				}
+			}
+		}
+		
+	}
+	
+	public static void swap(int[] arr , int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+	
+}
+
+public class Main {
+	public static void main(String[] args) {
+				
+		int[] arr = {6, 2, 3,5, 1};
+		
+		SelectionSort ss = new SelectionSort();
+		ss.sort(arr, 5);
+		
+		BubbleSort bs = new BubbleSort();
+		bs.sort(arr, 5);
+		
+	
+		InsertionSort is = new InsertionSort();
+		is.sort(arr, 5);
+		System.out.println(Arrays.toString(arr));
+		
+	}
+}
+
+
+
+
+
+
+Problem 5 :
+======================================================================================================
+
+Solution :
+
+
+package com.masai;
+
+interface Fruit{
+	void hasAPeel();
+	void hasARoot();
+	
+}
+
+interface Vegetable{
+	
+}
+
+class Tomato implements Fruit,Vegetable{
+
+	public void hasAPeel() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside hasAPeel Method..");
+		
+	}
+
+	public void hasARoot() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside hasARoot Method..");
+		
+	}
+	
+}
+
+public class Main{
+	public static void main(String[] args) {
+		
+		Tomato t = new Tomato();
+		t.hasAPeel();
+		t.hasARoot();
+		
+		
+	}
+}
+
+
+
+
+
+

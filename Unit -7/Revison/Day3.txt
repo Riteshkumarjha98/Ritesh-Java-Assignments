@@ -1,0 +1,275 @@
+Problem 1 :
+========================================================================================================================================
+
+Part 1 Answer :
+----------------------------------------------------------------------------------------------------------------------------
+
+
+package com.masai;
+
+abstract class AbstractAlgorithm{
+	abstract void steps();
+}
+
+class Algorithm1 extends AbstractAlgorithm{
+
+	@Override
+	void steps() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside steps of Algorithm1 ");
+	}
+}
+
+public class Main{
+
+	public static void main(String[] args) {
+		
+		
+		AbstractAlgorithm a = new Algorithm1();
+		a.steps();                                            // This pronblem is easily got called so we didn't face any  error in this case.
+		
+		
+	}
+}
+
+
+
+Part 2 Answer :
+-----------------------------------------------------------------
+
+
+package com.masai;
+
+abstract class AbstractAlgorithm{
+	abstract void steps();
+}
+
+abstract class Algorithm1 extends AbstractAlgorithm{
+
+	@Override
+	void steps() {
+		// TODO Auto-generated method stub
+		System.out.println("Inside steps of Algorithm1 ");
+	}
+}
+
+public class Main{
+	public static void main(String[] args) {
+		
+		
+		Algorithm1 a = new Algorithm1();    // In this problem we will get compilation error since we are trying to extend abstract class with sub abstract class
+                                                                                           
+	
+		
+		
+	}
+}
+
+
+
+Problem 3 Answer :
+
+----------------------------------------------------------------
+abstract class AbstractAlgorithm{
+	private int stepCount;            // It will work fine
+}
+
+
+
+
+
+Problem 4 Answer :
+================================================================================================================================
+public class Main{
+
+	public static void main(String[] args) {
+	AbstractAlgorithm a = new AbstractAlgorithm() {                     // In this problem we need to provide body here in order to run the application.
+				
+	};
+	  System.out.println(a.getStepCount());
+	}
+}
+
+abstract class AbstractAlgorithm{
+	private int stepCount;
+	
+	public int getStepCount(){
+	  return stepCount;
+	}
+}
+
+
+Problem 2 :
+==============================================================================================================================================
+
+Part 1 :
+--------------------------------------------------------------------------------------------------------------
+
+package com.masai;
+            
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2();
+}
+
+public class Main{
+	public static void main(String[] args) {
+		Interface1 i = new Interface1() {      // Here for creating instance we need to provide body then
+                                                       // we only get reference variable to call the  method					   
+			
+			@Override
+			public void method1() {
+				
+		        System.out.println("Inside method1 of instance Intefac1");
+			}
+		};
+		
+	   i.method1();
+	}
+}
+
+
+
+Part 2 :
+----------------------------------------------------------------------------------------------------------------------
+
+package com.masai;
+
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	void method2();
+}
+
+interface Implementation implements Interface2{                  // Here we are implementing interface instead of extending so we ll get error.
+	void method2();
+}
+
+
+
+
+Part 3
+--------------------------------------------------------------------------------------------------------------
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1 {
+	void method2()
+}
+
+interface Implementation implements Interface2 {          //Here again we are implementing interface instead of extending so we ll get error.
+	void method1();
+	void method2();
+}
+
+
+
+Part 4 
+---------------------------------------------------------------------------------------------------------
+
+interface Interface1{
+	void method1();
+}
+
+interface Interface2 extends Interface1{
+	
+             void method2();
+}
+
+
+
+abstract class ImplementationAbstract implements Interface2{             // Here we can implement since any class can implement interface.
+	public void method1() { }
+}
+
+
+
+Part 5
+-----------------------------------------------------------------------------------------------------------
+
+interface Interface3 {
+
+        int test;                                              // Here it didn't work because it need to be initiated..
+}
+
+
+Part 6
+----------------------------------------------------------------------------------------------------------------
+
+interface Interface3 {      
+    int test = 5;                                        // It will work because by default jvm will put  public static final int test = 5;
+}
+
+
+Part 7
+--------------------------------------------------------------------------------------------------------------------------------------
+
+interface Interface4{
+	default  void print(){                                             // From Java 8 we can use  default methods inside interface
+   
+         System.out.println("default");
+     
+       }
+}
+
+
+Part 8
+-------------------------------------------------------------------------------------------------------------
+
+public class Main{
+	public static void main(String[] args) {
+	     Test test  = new Test();     
+	      test.print();                      // Here it is  work perfectly and print parent method print() 
+                                                     //because child has no any own method then it will go for parent.                                             }
+
+
+interface Interface4{
+	
+	default void print(){
+		System.out.println("default");
+      }
+}
+
+class Test implements Interface4{
+
+ }
+
+
+
+Part 9
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+public class Main{
+	public static void main(String[] args) {
+		Test1 test  = new Test1();
+		test.print();          // First it will print child method as a output because child has it own implemented method so first priority will
+                                               //be child method then parent.
+                  }
+}                                           
+
+
+interface Interface4{
+	
+	default void print(){
+		System.out.println("default");
+	}
+}
+
+class Test1 implements Interface4{
+   
+	public void print(){
+		System.out.println("override");
+	}
+	
+}
+
+==============================================================================================================================

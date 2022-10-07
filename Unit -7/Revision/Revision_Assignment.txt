@@ -1,0 +1,42 @@
+public class Main
+{
+	
+public static void main(String[] args) {
+       
+         String s3 = "Value1";
+               
+         String s2 = "Value2";
+               
+   long startTime = System.currentTimeMillis();  
+
+          for (int i = 0; i < 100000; ++i) {
+                		
+              s3 = s3 + s2;
+    
+            }
+   
+   System.out.println("Time Taken In Object Creation Approach: " + (System.currentTimeMillis() - startTime) + "ms");
+            
+              
+                 
+                 
+                 startTime = System.currentTimeMillis(); 
+ 
+               StringBuffer s5 = new StringBuffer("Value1");
+  
+                    String s4 = "Value2"; 
+
+                                
+                    for (int i = 0; i < 100000; ++i) {
+                         
+                  	s5.append(s4);
+
+                       
+                   }
+             
+                            System.out.println("Time Taken By StringBuffer: " + (System.currentTimeMillis() - startTime) + "ms"); 
+    
+  
+
+	}
+}

@@ -1,0 +1,197 @@
+
+1. Problem 1:
+
+*Can super class reference variable can hold an object of sub class? Give Examples*
+
+
+======================================================================================================================================
+Yes.Probably the below code snipet will answer your question.
+
+//Base class
+
+abstract class Person{
+
+private String name;
+
+private Integer age;
+
+}
+
+//Child class of Person
+
+class Employee extends Person{
+
+private String empID;
+
+}
+
+//Child class of Person
+
+class Student extends Person{
+
+private Integer roll;
+
+}
+
+Person p1=new Employee();
+
+/*Here p1 is reference of person class that is pointing to employee object*/
+
+==============================================================================================================================================
+Problem 3 : Answer the following :
+
+*Is a super class constructor called even when there is no explicit call from a
+ sub class constructor? What will be the output of below program ?
+
+==============================================================================================================================================
+class Animal {
+		public Animal() {
+				System.out.println("Animal Constructor");
+		}
+}
+
+class Dog extends Animal {
+		public Dog() {
+				System.out.println("Dog Constructor");
+		}
+}
+
+class Labrador extends Dog {
+		public Labrador() {
+				System.out.println("Labrador Constructor");
+		}
+}
+
+public class ConstructorExamples {
+		public static void main(String[] args) {
+				Labrador labrador = new Labrador();
+		}
+}
+
+Ans:
+Main.java:20: error: class ConstructorExamples is public, should be declared in a file named ConstructorExamples.java
+public class ConstructorExamples {
+       ^
+1 error
+
+
+
+===================================================================================================================================================
+
+Problem 4 : What will be the output of below code
+
+a) What will be the output
+
+class Test {
+    int a, b;
+
+	Test(){
+		this(2, 4);
+	}
+
+	Test(int a, int b){
+		this();
+	}
+    public static void main(String[] args) {
+       Test a = new Test();
+    }
+}
+
+------------------------------------------------------------------------------------------------------
+ error: recursive constructor invocation
+	Test(int a, int b){
+
+
+======================================================================================================================================================
+b) What will be the output 
+
+
+Class Animal(){
+
+	String name;
+
+	Animal(){
+		this.name = "Lion"; 
+	}
+
+	public Animal(String name){
+		this.name = name;
+	}
+}
+
+
+Animal a = new Animal("tiger");
+System.out.println(a.name); 
+
+
+Animal b = new Animal(); 
+System.out.println(b.name); 
+
+----------------------------------------------------------
+
+Main.java:3: error: class, interface, or enum expected
+Class Animal(){
+^
+Main.java:7: error: class, interface, or enum expected
+	Animal(){
+	^
+Main.java:9: error: class, interface, or enum expected
+	}
+	^
+Main.java:11: error: class, interface, or enum expected
+	public Animal(String name){
+	       ^
+Main.java:13: error: class, interface, or enum expected
+	}
+	^
+Main.java:18: error: class, interface, or enum expected
+System.out.println(a.name); 
+^
+Main.java:21: error: class, interface, or enum expected
+Animal b = new Animal(); 
+^
+Main.java:22: error: class, interface, or enum expected
+System.out.println(b.name); 
+^
+8 errors
+
+
+
+==========================================================================================================
+
+c) What will be the output 
+
+class Foo{
+	public void doIt(int number){
+		System.out.println("A");
+	}
+
+	public void doIt(String string){
+		System.out.println("B");
+	}
+}
+
+class Bar extends Foo{
+	public void doIt(float number){
+		System.out.println("C");
+	}
+}
+
+Bar x = new Bar();
+x.doIt("hello");
+
+----------------------------------
+
+Main.java:25: error: class, interface, or enum expected
+Bar x = new Bar();
+^
+Main.java:26: error: class, interface, or enum expected
+x.doIt("hello");
+==============================================================================================================
+
+
+
+
+
+
+

@@ -1,0 +1,228 @@
+@Override
+	public String insertEmployee3Details(int eid, String name, String adddress, int Salary) {
+		
+		String message = "Not inserted...";
+		
+		try(Connection conn= DBUtil.provideConnection()) {
+			
+			
+			PreparedStatement ps= conn.prepareStatement("insert into Employee3 values(?,?,?,?)");
+			ps.setInt(1, eid);
+			ps.setString(2, name);
+			ps.setString(3, adddress);
+			ps.setInt(4, Salary);
+			
+			int x= ps.executeUpdate();
+			
+			if(x > 0)
+				message = "Inserted successfully..!";
+			
+			
+		} catch (SQLException e) {
+		
+			message = e.getMessage();
+		}
+		
+		
+		
+		
+		
+		return message;
+	}
+
+	@Override
+	public String insertEmployee3Details2(Employee3 Employee3) {
+		
+		String message = "Not inserted...";
+		
+		try(Connection conn= DBUtil.provideConnection()) {
+			
+			
+			PreparedStatement ps= conn.prepareStatement("insert into Employee3 values(?,?,?,?)");
+			ps.setInt(1, Employee3.getEid());
+			ps.setString(2, Employee3.getName());
+			ps.setString(3, Employee3.getAddress());
+			ps.setInt(4, Employee3.getSalary());
+			
+			int x= ps.executeUpdate();
+			
+			if(x > 0)
+				message = "Inserted successfully..!";
+			
+			
+		} catch (SQLException e) {
+		
+			message = e.getMessage();
+		}
+		
+		
+		
+		
+		
+		return message;
+		
+		
+
+	}
+
+	@Override
+	public int getSalaryByeid(int eid)throws Employee3Exception {
+
+		int Salary = -1;
+		
+
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+
+		PreparedStatement ps= conn.prepareStatement("select Salary from Employee3 where eid=?");	
+			
+		ps.setInt(1, eid);
+		
+		ResultSet rs= ps.executeQuery();
+			
+		if(rs.next())
+			Salary= rs.getInt("Salary");
+		else
+		{
+			//Employee3Exception exp = new Employee3Exception("Employee3 does not exist with the eid: "+eid);
+			//throw exp;
+			
+			
+			throw new Employee3Exception("Employee3 does not exist with eid :"+eid);
+		}
+		
+		
+			
+			
+		} catch (SQLException e) {
+			//e.printStackTrace();
+			throw new Employee3Exception(e.getMessage());
+			
+		}
+		
+		
+		return Salary;
+		
+	}
+
+	@Override
+	public Employee3 getEmployee3Byeid(int eid) throws Employee3Exception {
+		
+		Employee3 Employee3 = null;
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			
+			PreparedStatement ps= conn.prepareStatement("select * from Employee3 where eid =?");
+			
+			ps.setInt(1, eid);
+			
+			ResultSet rs= ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				int r= rs.getInt("eid");
+				String n= rs.getString("name");
+				String a= rs.getString("address");
+				int m= rs.getInt("Salary");
+				
+				Employee3 = new Employee3(r, n, a, m);
+				
+				
+			}else
+				throw new Employee3Exception("Employee3 does not exist with eid :"+eid);
+			
+			
+			
+			
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			
+			throw new Employee3Exception(e.getMessage());
+		}
+		
+		
+		return Employee3;
+	}
+
+	@Override
+	public List<Employee3> getAllEmployee3s() throws Employee3Exception {
+		
+		
+		List<Employee3> Employee3s = new ArrayList<>();
+		
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			
+			PreparedStatement ps= conn.prepareStatement("select * from Employee3");
+			ResultSet rs= ps.executeQuery();
+			
+			
+			while(rs.next()) {
+				
+				int r= rs.getInt("eid");
+				String n= rs.getString("name");
+				String a= rs.getString("address");
+				int m= rs.getInt("Salary");
+				
+				Employee3 Employee3 = new Employee3(r, n, a, m);
+				
+				Employee3s.add(Employee3);
+				
+			}
+			
+			if(Employee3s.size() <=0)
+				throw new Employee3Exception("There is no any Employee3");
+			
+			
+			
+			
+			
+		} catch (SQLException e) {
+			throw new Employee3Exception(e.getMessage());
+			
+		}
+		
+	
+		
+		return Employee3s;
+		
+		
+	}
+
+	@Override
+	public boolean giveGraceSalaryToEmployee3s(int Salary) {
+		
+		boolean flag = false;
+		
+		
+		try(Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps= conn.prepareStatement("update Employee3 set Salary = Salary+? where Salary < 800");
+			
+			ps.setInt(1, Salary);
+			
+			int x= ps.executeUpdate();
+			
+			if(x > 0)
+				flag = true;
+			
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return flag;
+		
+	}
+
+
+	
+
+}
+
