@@ -1,10 +1,9 @@
 package com.assignment.service;
 
-import com.assignment.entities.Post;
-import com.assignment.exception.ResourceNotFoundException;
 
-import payload.PagedResponse;
+
 import payload.PostDto;
+import payload.PostResponse;
 
 
 public interface PostServiceIntr {
@@ -13,27 +12,20 @@ public interface PostServiceIntr {
 //
 //	PagedResponse<Post> getPostsByCreatedBy(String username, int page, int size);
 //
-//	PagedResponse<Post> getPostsByCategory(Long id, int page, int size);
-//
-//	PagedResponse<Post> getPostsByTag(Long id, int page, int size);
-//
-////	Post updatePost(Long id, PostRequest newPostRequest, UserPrincipal currentUser);
-////
-////	ApiResponse deletePost(Long id, UserPrincipal currentUser);
-////
-////	PostResponse addPost(PostRequest postRequest, UserPrincipal currentUser);
-//
-//	Post getPost(Long id);
+//	PagedResponse<Post> getPostsByCategory(int id, int page, int size);
+
 
 	
 
-	PostDto createPost(PostDto postDto);
+	    PostDto createPost(PostDto postDto);
 
-	void deletePostById(int id);
+	    PostResponse getAllPosts(int pageNo, int pageSize, String sortBy, String sortDir);
 
-	PostDto updatePost(PostDto postDto, int id);
+	    PostDto getPostById(int id);
 
-	PostDto getPostById(int id);
+	    PostDto updatePost(PostDto postDto, int id);
+
+	    void deletePostById(int id);
 	 
 
 

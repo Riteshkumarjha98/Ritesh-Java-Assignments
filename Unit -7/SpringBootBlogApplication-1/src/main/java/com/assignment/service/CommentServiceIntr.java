@@ -3,23 +3,23 @@ package com.assignment.service;
 import java.util.List;
 
 
-import com.assignment.entities.Comment;
-import com.assignment.exception.CommentException;
-import com.assignment.exception.ResourceNotFoundException;
+
+
+import payload.CommentDto;
 
 public interface CommentServiceIntr {
 	
+	   CommentDto createComment(int postId, CommentDto commentDto);
 
-	
-    public Comment createNewComment(Comment Comment);
-	
-	public List<Comment> getAllCommentDetails();
-	
-	public Comment deleteComment(int id);
-          
-	Comment getCommentById(int id) throws CommentException;
+	    List<CommentDto> getCommentsByPostId(int postId);
 
-	Comment updateBook(int id, Comment Comment);
+	    CommentDto getCommentById(int postId, int commentId);
+
+	    CommentDto updateComment(int postId, int commentId, CommentDto commentRequest);
+
+	    void deleteComment(int postId, int commentId);
+	
+   
 	
 	
 	

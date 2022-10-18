@@ -24,8 +24,9 @@ import lombok.Setter;
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    
     private String name;
     private String email;
     private String body;
