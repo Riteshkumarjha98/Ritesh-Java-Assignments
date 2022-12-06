@@ -37,7 +37,7 @@ public class Employee {
 	private String lastName;
 	
 //	@Column(name = "CellPhone", nullable = false)
-    @Phone
+    //@Phone
 	private int cellPhone;
 	
 	
